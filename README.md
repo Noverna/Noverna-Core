@@ -1,6 +1,6 @@
-# Eterna-Core Resource
+# Noverna
 
-**Eterna-Core Resource** is the foundation of all scripts developed within this organization. It provides essential functionality, structure, and tools required to build and run a server with our open-source resources.
+**Noverna-Core Resource** is the foundation of all scripts developed within this organization. It provides essential functionality, structure, and tools required to build and run a server with our open-source resources.
 
 ## 🚀 About
 
