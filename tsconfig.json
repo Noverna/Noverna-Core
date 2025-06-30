@@ -1,0 +1,25 @@
+{
+	"compilerOptions": {
+		"types": ["@types/node", "reflect-metadata"],
+		"module": "es2022",
+		"target": "es2022",
+		"lib": ["es2022"],
+		"resolveJsonModule": true,
+		"allowUnreachableCode": false,
+		"strictFunctionTypes": true,
+		"noImplicitAny": true,
+		"noImplicitThis": true,
+		"noUnusedLocals": true,
+		"allowJs": false,
+		"allowSyntheticDefaultImports": true,
+		/** Decorator Stuff **/
+		"experimentalDecorators": true,
+		"emitDecoratorMetadata": true,
+		/** Decorator Stuff end **/
+		"skipLibCheck": true,
+		"importHelpers": true,
+		"moduleResolution": "bundler",
+		"esModuleInterop": true
+	},
+	"include": ["./src", "./web", "./scripts"]
+}
