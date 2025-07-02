@@ -9,7 +9,7 @@ description 'Noverna Core'
 version '1.0.0'
 node_version '22'
 license 'APGL-3.0-only'
-repository 'https://github.com/Noverna-Community/Noverna-Core'
+repository 'https://github.com/Noverna/Noverna-Core'
 
 client_scripts {
     '{PATH_TO_CLIENT}'
@@ -26,7 +26,7 @@ files {
 }
 `;
 
-const BuildOutputPath = "../../game_server/data_files/resources/Noverna";
+const BuildOutputPath = "../../game_server/data_files/resources/Noverna-Core";
 
 export interface FxmanifestConfig {
 	pathToClient: string;

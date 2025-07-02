@@ -4,5 +4,5 @@
 		"types": ["@citizenfx/server", "reflect-metadata", "@types/node"],
 		"noImplicitAny": false
 	},
-	"include": ["./"]
+	"include": ["./", "../shared", "../../common"]
 }

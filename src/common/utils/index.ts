@@ -1,4 +1,4 @@
-import { createHash, randomBytes } from "crypto";
+// import { createHash, randomBytes } from "crypto";
 import { isServer } from "../app";
 
 // ===============================
@@ -65,25 +65,25 @@ export const generateRandomString = (
  * @param encoding Encoding format ('hex', 'base64', 'base64url')
  * @returns Secure random string
  */
-export const generateSecureRandomString = (
-	length: number,
-	encoding: "hex" | "base64" | "base64url" = "hex"
-): string => {
-	if (!isServer) {
-		throw new Error("CryptoUtils can only be used on the server");
-	}
-	const bytes = randomBytes(Math.ceil(length / 2));
+// export const generateSecureRandomString = (
+// 	length: number,
+// 	encoding: "hex" | "base64" | "base64url" = "hex"
+// ): string => {
+// 	if (!isServer) {
+// 		throw new Error("CryptoUtils can only be used on the server");
+// 	}
+// 	const bytes = randomBytes(Math.ceil(length / 2));
 
-	switch (encoding) {
-		case "base64":
-			return bytes.toString("base64").substring(0, length);
-		case "base64url":
-			return bytes.toString("base64url").substring(0, length);
-		case "hex":
-		default:
-			return bytes.toString("hex").substring(0, length);
-	}
-};
+// 	switch (encoding) {
+// 		case "base64":
+// 			return bytes.toString("base64").substring(0, length);
+// 		case "base64url":
+// 			return bytes.toString("base64url").substring(0, length);
+// 		case "hex":
+// 		default:
+// 			return bytes.toString("hex").substring(0, length);
+// 	}
+// };
 
 /**
  * Generates various types of UIDs
@@ -114,13 +114,13 @@ export class UIDGenerator {
 	 * Generates a short UUID (base64 encoded)
 	 * @returns Short UUID
 	 */
-	static shortUuid(): string {
-		if (!isServer) {
-			throw new Error("HashUtils.md5 can only be used on the server");
-		}
-		const bytes = randomBytes(16);
-		return bytes.toString("base64url").substring(0, 22);
-	}
+	// static shortUuid(): string {
+	// 	if (!isServer) {
+	// 		throw new Error("HashUtils.md5 can only be used on the server");
+	// 	}
+	// 	const bytes = randomBytes(16);
+	// 	return bytes.toString("base64url").substring(0, 22);
+	// }
 
 	/**
 	 * Generates a prefixed UID (e.g., "user_ABC123DEF")
@@ -523,28 +523,28 @@ export const ValidationUtils = {
 // HASH UTILITIES
 // ===============================
 
-export const HashUtils = {
-	md5: (data: string): string => {
-		if (!isServer) {
-			throw new Error("HashUtils.md5 can only be used on the server");
-		}
-		return createHash("md5").update(data).digest("hex");
-	},
+// export const HashUtils = {
+// 	md5: (data: string): string => {
+// 		if (!isServer) {
+// 			throw new Error("HashUtils.md5 can only be used on the server");
+// 		}
+// 		return createHash("md5").update(data).digest("hex");
+// 	},
 
-	sha256: (data: string): string => {
-		if (!isServer) {
-			throw new Error("HashUtils.md5 can only be used on the server");
-		}
-		return createHash("sha256").update(data).digest("hex");
-	},
+// 	sha256: (data: string): string => {
+// 		if (!isServer) {
+// 			throw new Error("HashUtils.md5 can only be used on the server");
+// 		}
+// 		return createHash("sha256").update(data).digest("hex");
+// 	},
 
-	sha512: (data: string): string => {
-		if (!isServer) {
-			throw new Error("HashUtils.md5 can only be used on the server");
-		}
-		return createHash("sha512").update(data).digest("hex");
-	},
-};
+// 	sha512: (data: string): string => {
+// 		if (!isServer) {
+// 			throw new Error("HashUtils.md5 can only be used on the server");
+// 		}
+// 		return createHash("sha512").update(data).digest("hex");
+// 	},
+// };
 
 // ===============================
 // PERFORMANCE UTILITIES

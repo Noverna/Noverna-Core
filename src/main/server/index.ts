@@ -9,7 +9,6 @@ import { ChainMiddlewareEventServerFactory } from "../../common/middleware/Event
 import { ChainMiddlewareTickServerFactory } from "../../common/middleware/Tick/middleware.tick.server";
 import { ServerProviderLoader } from "../../common/loader/Provider/provider.server.loader";
 import { setMaxListeners } from "events";
-import { TestModule } from "./test/test.module";
 
 async function Bootstrap() {
 	try {
@@ -28,14 +27,10 @@ async function Bootstrap() {
 			console.warn("Konnte setMaxListeners nicht setzen:", e);
 		}
 
-		const application = await Application.create(
-			ServerProviderLoader,
-			[TestModule],
-			{
-				gracefulShutdownTimeout: 30000,
-				enableResourceListener: true,
-			}
-		);
+		const application = await Application.create(ServerProviderLoader, [], {
+			gracefulShutdownTimeout: 30000,
+			enableResourceListener: true,
+		});
 
 		console.log("Application läuft... Warte auf Shutdown-Signal");
 		await application.waitForShutdown();
